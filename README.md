@@ -1,0 +1,1 @@
+Seja muito bem-vindo(a)! Organizar os estudos no curso de Análise e Desenvolvimento de Sistemas (ADS) da Fatec é um desafio, dado o volume de plataformas e conteúdos. Este repositório nasceu para centralizar tudo isso e facilitar a nossa jornada acadêmica
