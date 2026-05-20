@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vetores com Baralho</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Code+Pro:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1a6b3a;
+    --verde-claro: #2d9a56;
+    --vermelho: #c0392b;
+    --preto: #1a1a1a;
+    --creme: #f9f5ed;
+    --creme-escuro: #ede7d5;
+    --ouro: #c9a84c;
+    --ouro-claro: #f0d080;
+    --cinza: #6b6b6b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--preto);
+    background-image: 
+      radial-gradient(ellipse at 20% 10%, #1a3a28 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, #2a1515 0%, transparent 50%);
+    color: var(--creme);
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #0d2b1a 0%, #1a1a1a 40%, #2a0d0d 100%);
+    border-bottom: 3px solid var(--ouro);
+    padding: 48px 40px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '♠ ♥ ♣ ♦ ♠ ♥ ♣ ♦ ♠ ♥ ♣ ♦ ♠ ♥ ♣ ♦';
+    position: absolute; top: 8px; left: 0; right: 0;
+    font-size: 13px; letter-spacing: 10px; opacity: 0.12; color: var(--ouro);
+    white-space: nowrap; overflow: hidden;
+  }
+  header::after {
+    content: '♠ ♥ ♣ ♦ ♠ ♥ ♣ ♦ ♠ ♥ ♣ ♦ ♠ ♥ ♣ ♦';
+    position: absolute; bottom: 8px; left: 0; right: 0;
+    font-size: 13px; letter-spacing: 10px; opacity: 0.12; color: var(--ouro);
+    white-space: nowrap; overflow: hidden;
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: var(--ouro);
+    color: var(--preto);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 5px 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-radius: 2px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--creme);
+    text-shadow: 0 2px 20px rgba(201,168,76,0.3);
+    margin-bottom: 12px;
+  }
+  h1 span { color: var(--ouro); }
+  .header-sub {
+    font-size: 1rem;
+    color: #aaa;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+  .header-meta {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    color: var(--ouro-claro);
+    display: flex; align-items: center; gap: 7px;
+  }
+
+  /* MAIN */
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 0; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--ouro);
+    border-bottom: 2px solid var(--ouro);
+    padding-bottom: 10px;
+    margin: 56px 0 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-title .icon { font-size: 1.4rem; }
+
+  /* CONCEPT BOX */
+  .concept-box {
+    background: linear-gradient(135deg, #0e2d1a, #1a1a0d);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-left: 4px solid var(--ouro);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .concept-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--ouro-claro);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  .concept-box p { color: #ccc; line-height: 1.7; font-size: 0.95rem; }
+  .concept-box .code-analogy {
+    margin-top: 14px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.85rem;
+    color: #80d48a;
+    border-left: 3px solid var(--verde-claro);
+  }
+
+  /* ACTIVITY CARD */
+  .activity-card {
+    background: linear-gradient(160deg, #111 0%, #1a1208 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .activity-card:hover {
+    border-color: rgba(201,168,76,0.6);
+    box-shadow: 0 0 30px rgba(201,168,76,0.08);
+  }
+  .activity-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -10px; right: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.07);
+    line-height: 1;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .card-number {
+    background: var(--ouro);
+    color: var(--preto);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+    font-size: 0.8rem;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .card-title-area h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--creme);
+    margin-bottom: 4px;
+  }
+  .card-title-area .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: 'Source Code Pro', monospace;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+  .tag-time { background: rgba(45,154,86,0.2); color: #6dcc88; border: 1px solid rgba(45,154,86,0.4); }
+  .tag-group { background: rgba(192,57,43,0.2); color: #e87c6f; border: 1px solid rgba(192,57,43,0.4); }
+  .tag-concept { background: rgba(201,168,76,0.15); color: var(--ouro-claro); border: 1px solid rgba(201,168,76,0.3); }
+
+  .card-body { padding-left: 52px; }
+
+  .card-body p { color: #bbb; line-height: 1.7; font-size: 0.93rem; margin-bottom: 12px; }
+
+  .step-list { list-style: none; margin: 14px 0; }
+  .step-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    color: #ccc; font-size: 0.91rem; line-height: 1.6;
+    margin-bottom: 10px;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    border-left: 2px solid rgba(201,168,76,0.3);
+  }
+  .step-list li .step-num {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: var(--ouro);
+    background: rgba(201,168,76,0.12);
+    padding: 2px 7px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+
+  .highlight-box {
+    margin-top: 16px;
+    background: rgba(45,154,86,0.1);
+    border: 1px solid rgba(45,154,86,0.3);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.87rem;
+    color: #9dddb0;
+    line-height: 1.6;
+  }
+  .highlight-box strong { color: #6dcc88; }
+
+  .code-block {
+    margin-top: 14px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.82rem;
+    color: #7ec8a0;
+    border: 1px solid #2a2a2a;
+    line-height: 1.8;
+    overflow-x: auto;
+  }
+  .code-block .comment { color: #555; }
+  .code-block .kw { color: #c084fc; }
+  .code-block .num { color: #fb923c; }
+  .code-block .str { color: #fbbf24; }
+
+  /* SUITS */
+  .suit-red { color: #e87c6f; }
+  .suit-black { color: #ccc; }
+
+  /* DIVIDER */
+  .fancy-divider {
+    text-align: center;
+    margin: 48px 0 0;
+    color: rgba(201,168,76,0.3);
+    font-size: 1.2rem;
+    letter-spacing: 16px;
+  }
+
+  /* TIPS GRID */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .tip-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .tip-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--ouro-claro);
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tip-card p { color: #aaa; font-size: 0.88rem; line-height: 1.65; }
+
+  /* SEQUENCE TABLE */
+  .mapping-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    font-size: 0.88rem;
+  }
+  .mapping-table th {
+    background: rgba(201,168,76,0.15);
+    color: var(--ouro);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 2px solid rgba(201,168,76,0.3);
+  }
+  .mapping-table td {
+    padding: 9px 16px;
+    color: #bbb;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .mapping-table tr:hover td { background: rgba(201,168,76,0.04); }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    margin-top: 64px;
+    padding: 28px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    color: #555;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+  }
+  footer span { color: var(--ouro); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">Guia de Atividades</div>
+  <h1>Vetores com <span>Baralho</span></h1>
+  <p class="header-sub">Algoritmos e Lógica de Programação · Aprendizagem Ativa</p>
+  <div class="header-meta">
+    <span class="meta-pill">🃏 2 Baralhos</span>
+    <span class="meta-pill">👥 ~35 Alunos</span>
+    <span class="meta-pill">📐 5 Atividades</span>
+    <span class="meta-pill">⏱️ 1–2 aulas</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- MAPEAMENTO CONCEITUAL -->
+  <div class="section-title"><span class="icon">🗺️</span> Mapeamento Baralho → Vetor</div>
+
+  <div class="concept-box">
+    <h3>Como o baralho vira um vetor na prática</h3>
+    <p>Antes de qualquer atividade, apresente esse mapeamento aos alunos no quadro. Ele ancora todos os exercícios seguintes em conceitos reais de programação.</p>
+    <table class="mapping-table">
+      <thead>
+        <tr><th>Elemento do Baralho</th><th>Conceito de Vetor</th><th>Exemplo em código</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🂠 Pilha de cartas (ordenadas)</td><td>Vetor declarado</td><td><code>int cartas[13]</code></td></tr>
+        <tr><td>Posição física na fileira</td><td>Índice (posição)</td><td><code>cartas[0], cartas[1]…</code></td></tr>
+        <tr><td>Valor da carta (A, 2… K)</td><td>Valor armazenado</td><td><code>cartas[0] = 1</code></td></tr>
+        <tr><td>Número de cartas na mão</td><td>Tamanho do vetor</td><td><code>tamanho = 5</code></td></tr>
+        <tr><td>Virar uma carta</td><td>Acessar posição</td><td><code>x = cartas[i]</code></td></tr>
+        <tr><td>Trocar cartas de posição</td><td>Troca de elementos (swap)</td><td><code>temp = v[i]; v[i]=v[j]…</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ATIVIDADES -->
+  <div class="section-title"><span class="icon">🎯</span> Atividades</div>
+
+  <!-- ATIVIDADE 1 -->
+  <div class="activity-card" data-num="1">
+    <div class="card-header">
+      <div class="card-number">01</div>
+      <div class="card-title-area">
+        <h2>A Fileira Humana — Declaração e Acesso</h2>
+        <div class="tags">
+          <span class="tag tag-time">⏱ 15–20 min</span>
+          <span class="tag tag-group">👥 Turma toda</span>
+          <span class="tag tag-concept">Índice · Acesso · Declaração</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Os alunos <em>são</em> o vetor. Cada um vira uma posição (índice), segurando uma carta como seu valor. O professor faz chamadas de código e a turma executa.</p>
+      <ul class="step-list">
+        <li><span class="step-num">01</span>Embaralhe um baralho. Distribua 1 carta (face para baixo) para 13 alunos que ficam em fila numerada de 0 a 12.</li>
+        <li><span class="step-num">02</span>Diga: <strong>"vetor[3]"</strong> → o aluno na posição 3 vira a carta e mostra o valor. Anote no quadro.</li>
+        <li><span class="step-num">03</span>Peça atribuições: <strong>"vetor[7] = ás de espadas"</strong> → o aluno troca sua carta.</li>
+        <li><span class="step-num">04</span>Tente acessar <strong>"vetor[13]"</strong> — ninguém responde. Discuta: <em>acesso fora do limite!</em></li>
+        <li><span class="step-num">05</span>Peça ao professor auxiliar anotar o vetor no quadro conforme as cartas são reveladas.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Conceito fixado:</strong> Vetores têm tamanho fixo, índices começam em 0, acessar fora do limite causa erro — tudo isso fica visceral quando <em>você é a posição 13 que não existe</em>.
+      </div>
+      <div class="code-block">
+        <span class="comment">// O que está acontecendo em código:</span><br>
+        <span class="kw">int</span> vetor[<span class="num">13</span>];  <span class="comment">// 13 alunos em fila</span><br>
+        vetor[<span class="num">3</span>] = <span class="num">7</span>;   <span class="comment">// aluno[3] mostra carta 7</span><br>
+        vetor[<span class="num">13</span>] = <span class="num">1</span>;  <span class="comment">// ❌ sem aluno aqui! Erro.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATIVIDADE 2 -->
+  <div class="activity-card" data-num="2">
+    <div class="card-header">
+      <div class="card-number">02</div>
+      <div class="card-title-area">
+        <h2>Percorrendo com o Dedo — Laço sobre Vetor</h2>
+        <div class="tags">
+          <span class="tag tag-time">⏱ 20–25 min</span>
+          <span class="tag tag-group">👥 Grupos de 5–7</span>
+          <span class="tag tag-concept">For · Percurso · Acumulador</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Cada grupo recebe 7 cartas enfileiradas face para baixo. Um aluno faz o papel do <em>índice i</em>, percorrendo a fila enquanto outro "executa o corpo do laço".</p>
+      <ul class="step-list">
+        <li><span class="step-num">01</span>Distribua 7 cartas embaralhadas para cada grupo (use os dois baralhos para atender os ~5 grupos).</li>
+        <li><span class="step-num">02</span>Aluno <strong>"i"</strong> começa na posição 0 e aponta para cada carta sequencialmente.</li>
+        <li><span class="step-num">03</span><strong>Missão A:</strong> Somar os valores numéricos (A=1, J=11, Q=12, K=13) — aluno "acumulador" vai somando em voz alta.</li>
+        <li><span class="step-num">04</span><strong>Missão B:</strong> Encontrar a maior carta — aluno "max" segura a maior vista até agora.</li>
+        <li><span class="step-num">05</span>Ao final, cada grupo traduz o processo em pseudocódigo no papel.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Discussão:</strong> Por que i vai de 0 até 6 (não até 7)? O que acontece se parar antes? E se começar em 1?
+      </div>
+      <div class="code-block">
+        <span class="kw">int</span> soma = <span class="num">0</span>, max = cartas[<span class="num">0</span>];<br>
+        <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; <span class="num">7</span>; i++) {<br>
+        &nbsp;&nbsp;soma += cartas[i];<br>
+        &nbsp;&nbsp;<span class="kw">if</span> (cartas[i] &gt; max) max = cartas[i];<br>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- ATIVIDADE 3 -->
+  <div class="activity-card" data-num="3">
+    <div class="card-header">
+      <div class="card-number">03</div>
+      <div class="card-title-area">
+        <h2>Ordenando na Mão — Bubble Sort Visual</h2>
+        <div class="tags">
+          <span class="tag tag-time">⏱ 25–30 min</span>
+          <span class="tag tag-group">👥 Grupos de 6–8</span>
+          <span class="tag tag-concept">Ordenação · Swap · Laço aninhado</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Alunos em fila seguram cartas e executam o Bubble Sort com seus próprios corpos — trocando de lugar quando a lógica manda.</p>
+      <ul class="step-list">
+        <li><span class="step-num">01</span>6 a 8 alunos em fila, cada um com uma carta virada para a turma.</li>
+        <li><span class="step-num">02</span>Professor "executa" o algoritmo: compara alunos adjacentes <strong>("posição i vs i+1")</strong>.</li>
+        <li><span class="step-num">03</span>Se estiverem fora de ordem → os dois alunos trocam fisicamente de lugar (swap!).</li>
+        <li><span class="step-num">04</span>A turma de fora conta as trocas e anota cada "passada" do laço externo.</li>
+        <li><span class="step-num">05</span>Rodar 2–3 vezes com grupos diferentes. Compare: quantas trocas cada configuração precisou?</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Pergunte:</strong> Qual é o pior caso? (cartas em ordem inversa.) Melhor caso? (já ordenadas.) Introduz complexidade de forma intuitiva.
+      </div>
+      <div class="code-block">
+        <span class="kw">for</span> (i = <span class="num">0</span>; i &lt; n<span class="num">-1</span>; i++)<br>
+        &nbsp;<span class="kw">for</span> (j = <span class="num">0</span>; j &lt; n-i<span class="num">-1</span>; j++)<br>
+        &nbsp;&nbsp;<span class="kw">if</span> (v[j] &gt; v[j<span class="num">+1</span>]) {  <span class="comment">// troca de lugar!</span><br>
+        &nbsp;&nbsp;&nbsp;temp=v[j]; v[j]=v[j+<span class="num">1</span>]; v[j+<span class="num">1</span>]=temp;<br>
+        &nbsp;&nbsp;}
+      </div>
+    </div>
+  </div>
+
+  <!-- ATIVIDADE 4 -->
+  <div class="activity-card" data-num="4">
+    <div class="card-header">
+      <div class="card-number">04</div>
+      <div class="card-title-area">
+        <h2>Busca do Mistério — Busca Linear e Binária</h2>
+        <div class="tags">
+          <span class="tag tag-time">⏱ 20–25 min</span>
+          <span class="tag tag-group">👥 Duplas competindo</span>
+          <span class="tag tag-concept">Busca Linear · Busca Binária · Eficiência</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Uma dupla busca a carta-alvo com busca linear, outra com busca binária (baralho já ordenado). Quem encontra com menos "comparações" vence.</p>
+      <ul class="step-list">
+        <li><span class="step-num">01</span>Prepare duas fileiras de 13 cartas: uma <strong>embaralhada</strong> (para busca linear), uma <strong>ordenada</strong> (para binária).</li>
+        <li><span class="step-num">02</span>Revele a carta-alvo (ex: "7 de ouros"). As duplas começam ao mesmo tempo.</li>
+        <li><span class="step-num">03</span><strong>Busca linear:</strong> percorre da esquerda, virando uma a uma até achar.</li>
+        <li><span class="step-num">04</span><strong>Busca binária:</strong> vira a do meio → se maior vai à direita, se menor à esquerda → repete.</li>
+        <li><span class="step-num">05</span>Contar em voz alta quantas cartas foram viradas em cada método. Anotar no quadro para 5 rodadas.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Insight poderoso:</strong> Com 13 cartas, a busca binária precisa de no máximo <strong>4 comparações</strong>. Com 52 cartas, ainda ~6. A turma "sente" o O(log n) antes de aprender a notação.
+      </div>
+    </div>
+  </div>
+
+  <!-- ATIVIDADE 5 -->
+  <div class="activity-card" data-num="5">
+    <div class="card-header">
+      <div class="card-number">05</div>
+      <div class="card-title-area">
+        <h2>Desafio do Croupier — Codificação em Grupo</h2>
+        <div class="tags">
+          <span class="tag tag-time">⏱ 30–40 min</span>
+          <span class="tag tag-group">👥 Times de 4–5</span>
+          <span class="tag tag-concept">Consolidação · Lógica · Pseudocódigo</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Atividade de fechamento: cada time recebe um baralho e um desafio para resolver <em>primeiro</em> fisicamente com as cartas, depois em pseudocódigo/código.</p>
+      <ul class="step-list">
+        <li><span class="step-num">01</span>Distribua 10 cartas por grupo e um cartão com o desafio (veja abaixo).</li>
+        <li><span class="step-num">02</span>O grupo resolve com as cartas físicas primeiro, documentando cada passo.</li>
+        <li><span class="step-num">03</span>Traduz para pseudocódigo ou código na linguagem da disciplina.</li>
+        <li><span class="step-num">04</span>Apresenta para a turma o processo e o código. Outros grupos testam com cartas diferentes.</li>
+      </ul>
+      <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="tip-card" style="border-color:rgba(192,57,43,0.4)">
+          <h4><span class="suit-red">♥</span> Desafio A</h4>
+          <p>Separar as cartas vermelhas das pretas em dois vetores distintos. Imprimir quantas de cada naipe.</p>
+        </div>
+        <div class="tip-card" style="border-color:rgba(255,255,255,0.15)">
+          <h4><span class="suit-black">♠</span> Desafio B</h4>
+          <p>Encontrar todas as cartas com valor par e colocá-las no início do vetor, mantendo a ordem relativa.</p>
+        </div>
+        <div class="tip-card" style="border-color:rgba(45,154,86,0.4)">
+          <h4><span class="suit-red">♦</span> Desafio C</h4>
+          <p>Inverter o vetor de cartas sem usar outro vetor (in-place). Mostrar antes e depois.</p>
+        </div>
+        <div class="tip-card" style="border-color:rgba(201,168,76,0.4)">
+          <h4><span class="suit-black">♣</span> Desafio D</h4>
+          <p>Contar quantas cartas de cada naipe existem. Armazenar as contagens num segundo vetor de 4 posições.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fancy-divider">♠ ♥ ♣ ♦</div>
+
+  <!-- DICAS DO PROFESSOR -->
+  <div class="section-title"><span class="icon">💡</span> Dicas para o Professor</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h4>🎴 Gestão dos Baralhos</h4>
+      <p>Com 2 baralhos (104 cartas) você atende ~5 grupos simultâneos com ~10 cartas cada com folga. Separe os baralhos por cor de fundo para nunca misturar.</p>
+    </div>
+    <div class="tip-card">
+      <h4>📋 Valores padrão</h4>
+      <p>Combine antes: A=1, J=11, Q=12, K=13. Escreva no quadro durante toda a aula para evitar dúvidas durante os exercícios.</p>
+    </div>
+    <div class="tip-card">
+      <h4>⚡ Ordem recomendada</h4>
+      <p>Atividade 1 (turma toda) → 2 (grupos) → 3 (grupos) → 4 (duplas, opcional) → 5 (desafio, fechamento). Adapte ao tempo disponível.</p>
+    </div>
+    <div class="tip-card">
+      <h4>🔗 Ponte para o código</h4>
+      <p>Sempre anote no quadro o equivalente em código de cada ação física. O aluno que vira a carta na posição 3 <em>é</em> o <code>vetor[3]</code>.</p>
+    </div>
+    <div class="tip-card">
+      <h4>📊 Avaliação rápida</h4>
+      <p>Na Atividade 5, circule pelos grupos e peça para qualquer membro explicar qualquer linha do pseudocódigo — ótimo indicador de compreensão real.</p>
+    </div>
+    <div class="tip-card">
+      <h4>🔄 Variações futuras</h4>
+      <p>As mesmas dinâmicas servem para matrizes (cartas em grade), pilhas (pilha de cartas na mão) e filas — o baralho vai longe na disciplina!</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Algoritmos e Lógica de Programação · Atividades com Baralho · <span>Vetores</span>
+</footer>
+
+</body>
+</html>
