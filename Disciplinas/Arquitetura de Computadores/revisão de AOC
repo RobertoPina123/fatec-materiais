@@ -1,0 +1,30 @@
+Materias do AOC para revisão
+
+Conversão de base:
+
+--> base 10 para 16 
+--> base 10 para 2 [ok] multiplas divisões por dois, ate nao haver mais divisao exata, considera os restos de cima para baixo
+--> base 10 para base 8
+
+
+--> base 2 para base 10 [ok] Multiplicação de cada numero pelo expoente de 2, da direita para esquerda e soma os resultados
+--> base 2 para base 16
+--> base 2 para base 8
+
+
+--> base 8 para base 10
+--> base 8 para base 2
+--> base 8 para base 16
+
+
+Soma e Subtração:
+
+--> Soma de Binários [ok]
+--> Subtração de Binários [ok]
+
+--> Soma de Hexadecimais
+--> Subtração de Hexadecimais 
+
+--> Soma de Octais 
+--> Subtração de Octais 
+
