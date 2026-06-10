@@ -1,5 +1,5 @@
 #include <iostream> 
-#include <vector> 
+
 
 using namespace std; 
 
@@ -9,7 +9,7 @@ int main() {
 	
 	cin >> n;
 	
-	vector<int> vetor(n);
+	int vetor[n];
 	
 	for(int i=0;i<n;i++) {
 		cout << "Original "; 
@@ -20,6 +20,7 @@ int main() {
 	cout << "Invetido "; 
 	
 	for(int i=0;i< n;i++) {
+
 	  cout << vetor[n - 1 - i] << " "; 	
 		   
 		}
