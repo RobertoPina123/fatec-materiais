@@ -1,0 +1,10 @@
+Guia de instalação local do Oracle AI Database 26ai Free for Windows
+-------------------------------------------------------------------
+
+https://www.youtube.com/watch?v=YwcicSS9DOY
+
+https://docs.oracle.com/en/database/oracle/oracle-database/26/xeinw/installing-oracle-database-xe.html#GUID-8A8E5F6D-F00E-40BD-B74D-A41CCC502AE9
+
+https://docs.oracle.com/en/database/oracle/oracle-database/26/ntcli/installing-the-oracle-database-client-software.html#GUID-F6B104C6-7A02-4909-9C95-BDED6AF60EAA
+
+

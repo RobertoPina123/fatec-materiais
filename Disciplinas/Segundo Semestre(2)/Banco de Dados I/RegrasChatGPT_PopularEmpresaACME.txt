@@ -1,0 +1,12 @@
+Criar os comandos INSERT no Banco de Dados Oracle para popular a base de dados anexa, contemplando as seguintes características: 
+- a empresa terá 50 funcionários divididos em 4 departamentos
+- 30% dos funcionários possuem filhos menores de 18 anos que são seus dependentes
+- 10% dos funcionários possuem até dois dependentes que serão pais ou avós (não filhos)
+- o restante não possui dependentes
+- a empresa trabalhou nos últimos 5 anos com 20 projetos de variados tamanhos, os quais tiveram a participação de todos os funcionários em pelo menos 1 dos projetos, com quantidades variadas de horas diárias de dedicação de cada funcionário.
+- o código deve indicar um supervisor para cada 5 funcionários e um gerente de departamento 
+
+UTILIZAR SOMENTE INSERT NO MODELO PADRÃO SQL, CONFORME EXEMPLO A SEGUIR:
+ INSERT INTO TABELA (COL1,COL2) VALUES ('3','SSSS')
+
+CRIAR OS INSERTS INVENTANDO NOMES E SOBRENOMES REAIS BRASILEIROS, BEM COMO ENDEREÇOS COMPLETOS NO FORMATO DO BRASIL. USAR TAMBÉM CPF, TELEFONES E DATAS COM FORMATO BRASILEIRO
