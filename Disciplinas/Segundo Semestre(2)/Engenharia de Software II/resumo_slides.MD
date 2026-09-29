@@ -358,15 +358,15 @@ Exemplo: Altura de uma pessoa, pode variar entre um valor de 150 cm a 180 cm.
 Exemplo: Tempo de reação: Podem variar em uma escala contínua entre 0,2 a 1,5. 
 Exemplo: Peso de um objeto: Pode variar em qualquer valor dentro de um intervalo contínuo, como de 2kg a 5kg. 
 
-                  [ Variável ]
-                       │
-       ┌───────────────┴───────────────┐
-       ▼                               ▼
-[ Qualitativa ]                 [ Quantitativa ]
-       │                               │
- ┌─────┴─────┐                   ┌─────┴─────┐
- ▼           ▼                   ▼           ▼
-[Nominal] [Ordinal]             [Discreta] [Contínua]
+>                 [ Variável ]
+>                      │
+>      ┌───────────────┴───────────────┐
+>           ▼                                                     ▼
+>  [ Qualitativa ]               [ Quantitativa ]
+>        │                              │
+>  ┌─────┴─────┐                  ┌─────┴─────┐
+>   ▼                   ▼                               ▼                   ▼
+> [Nominal] [Ordinal]           [Discreta] [Contínua]
 
 # Passo 2 - Técnicas de Criatividade
 
@@ -536,3 +536,354 @@ Exemplos de Ferramentas: Figma, pencil, Scketch, Invision, Axure, FrameJS
 -----------------------------------------------------------------------------------------------
 
 # Slide 3 - Modelagem
+
+- Conceitos Fundamentais 
+- Tipos de Modelagem
+- Introdução á UML
+- Diagramas de Caso de uso
+
+Modelagem de Software: Processo de representar um sistema utilizando modelos abstratos. 
+
+Objetivos: Visualizar o sistema antes da implementação, documentar a estrutura e comportamento, reduzir complexidade, facilitar comunicação entre equipe. 
+
+Porque Modelar: Melhor entendimento do sistema, identificar problemas antes da implementação, comunicação entre desenvolvedores, documentação do projeto, facilita a evolução do projeto. 
+
+O que é um Modelo: Uma representação simplificada da realidade. Exemplos: Planta de uma casa, mapa de uma cidade, diagrama de um sistema. 
+
+Modelos representam: 
+    - Estruturas do Sistema
+    - Comportamento 
+    - Interação entre componentes 
+    
+## Especificação de requisitos 
+
+### Recursos para modelagem 
+    
+- Recursos de Negócios 
+- Processos de Negócios 
+- Regras de Negócios
+    
+#### Recurso do Negócio
+
+- Recursos humanos: Funcionários, Gerentes, clientes, fornecedores, 
+
+- Recursos Materiais: Equipamentos, máquinas, produtos
+
+- Recursos Informacionais: Dados, documentos do sistema
+
+- Exemplo: Biblioteca 
+    - Obra 
+        - Livros
+        - Revistas
+    - Ficha Catalográfica 
+        - Título
+        - Autor
+        - Cidade
+        - Ano de Publicação
+        
+#### Processos do Negócio
+    
+- Atividades em que o estado do negócio é altear ado
+
+- Um processo descreve como uma atividade é realizada no negócios
+
+- Conjunto ordenado de atividades contendo: Começo e fim bem definidos, entrada e saídas especificadas. 
+
+- Exemplo: Biblioteca
+    - Emprestar livro
+    - Devolver Livro
+    - Reservar obra
+    - Pesquisar obra
+    - Entre outros 
+    
+#### Regras de Negócio 
+
+- Condições que definem ou restringem algum aspecto do negócio
+
+- Representam um conhecimento a respeito do negócio
+
+- Definem como os processos devem ser executados
+
+- Exemplo: Emprestar livro da biblioteca
+
+    - O empréstimo de obras da biblioteca pode ocorrer apenas para usuários previamente cadastrados
+    - Devolução atrasada tem multa de 1,50 por dia. 
+
+## UML 
+
+- Unified Modeling Language 
+
+- Linguagem de modelagem unificada
+
+- Linguagem-padrão para elaboração da estrutura de projetos de software 
+
+- Permite que os analistas e desenvolvedores visualizam os projetos através de diagramas padronizados
+
+Diagrama
+├── Diagrama de Estruturas
+│   ├── Diagrama de Perfil
+│   ├── Diagrama de Classes
+│   ├── Diagrama de Estruturas Compostas
+│   ├── Diagrama de Componentes
+│   ├── Diagrama de Implantação
+│   ├── Diagrama de Objetos
+│   └── Diagrama de Pacotes
+│
+└── Diagrama de Comportamentos
+    ├── Diagrama de Atividades
+    ├── Diagrama de Casos de Uso
+    ├── Diagrama de Máquina de Estados
+    └── Diagrama de Interação
+        ├── Diagrama de Sequência
+        ├── Diagrama de Comunicação
+        ├── Diagrama de Visão Geral de Interação
+        └── Diagrama de Tempo
+
+Adaptado de UML Superstructure Specification 2.4.1, Figure A.5
+
+### Diagramas estruturais 
+
+Existem para visualizar, especificar, construir e documentar os aspectos estáticos de um sistema,
+ou seja a representação de seu esqueleto e estruturas. 
+
+- Diagramas de classes
+- Diagramas de Objetos
+- Diagramas de Componentes
+- Diagramas de Instalação ou implementação
+- Diagramas de Pacotes
+- Diagramas de estrutura composta
+- Diagramas de Perfil
+
+### Diagramas Comportamentais 
+
+- Diagramas de Casos de uso
+- Diagramas de Estado 
+- Diagramas de atividades
+- Diagramas de interação
+    - Diagrama de sequência 
+    - Diagrama de visão geral de interação 
+    - Diagrama de Tempo
+    
+#### Diagramas de Caso de Uso
+
+- Representação Gráfica que descreve as funcionalidades propostas para o sistema que está sendo projetado.
+
+- Muito usado para levantamento de requisitos funcionais do sistema
+
+- Um caso de uso representa uma unidade discreta de interação entre um ator (Humano, dispositivo, ou outro software) e o sistema. 
+
+- Caso de uso de Negócios: Descreve como é usado por clientes e parceiros [Visão do cliente]
+
+- Caso de uso de Sistema: Representar os requisitos funcionais dos sistemas [Visão do desenvolvedor]
+
+- Atores: Especifica o papel executado por usuário, um dispositivo, outro sistema, que interage com o assunto(sistema)
+- Atores: Devem ser EXTERNOS ao sistema
+- Atores são representados por bonecos de palito(stick man) 
+
+     ○
+  /│\
+   │
+  / \
+
+ 
+- Atores podem ser de Negócios ou de sistema, representados sempre pelo boneco
+- Ator de Negócio: Colaboradores da empresa
+- Ator de sistemas: Usuários do sistema que será desenvolvido
+
+- Casos de uso: Especificação de um conjunto de ações executadas por um sistema, que contem um resultado observável 
+- Casos de uso: Representados por uma elipse, como o nome do caso de uso dentro: 
+
+  ╭──────────────────╮
+ ╱                                   ╲     O nome do caso de uso de ser um VERBO + SUBSTANTIVO
+│   Realizar Compra   │    (Indicando a ação ) 
+ ╲                                   ╱     Exemplo: Efetuar Login, Cadastrar Cliente  
+  ╰──────────────────╯
+    
+- Caso de uso de negócios: Servir Jantar em um restaurante
+
+- Caso de uso de Sistema: Efetuar login no sistema
+
+- Relacionamentos: Define as relações entre elementos do diagrama
+
+- Ajudam a descrever os casos de uso 
+
+- Tipos de Relacionamento: 
+    - Associação
+    - Agregação 
+    - Composição
+    - Herança
+    - Dependência 
+
+- Associação: Representa um relacionamento estrutural entre duas classes, objetos de uma classe se relacionam a outra classe. 
+- Associação: É o relacionamento mais comum em diagramas de classes 
+- Associação entre atores e casos de uso: Demonstra que o ator utiliza um caso de uso, requisitando uma função ou recebendo seu resultado. 
+- Associação: Representada por uma seta podendo ser direcionada ou não. Exemplo:  Cliente ───────────────────▶ ( Realizar Compra )
+- Exemplo de associação entre ator e caso de uso:
+
+                                         ╭──────────────────────╮             
+   ○                                                               ╱                                            ╲
+ ─┼─                                  │                           │
+  │      ──────────────────────────── │     Agendar consulta      │
+  ╱ ╲                                   │                          │
+                                        ╲                                          ╱
+Paciente                                 ╰──────────────────────╯
+
+
+- Exemplo de associação com Multiplicidade: A multiplicidade indica quantos objetos podem participar da relação: 
+
+                                          ╭────────────────────────╮
+     ○                                                                ╱                                               ╲
+  ─┼─                                   │                             │
+   │   ─────────────────────────────────│    Lecionar disciplinas     │
+    ╱ ╲                                    │                            │
+                                          ╲                                             ╱
+ Professor    1                 *          ╰────────────────────────╯
+ 
+ Um professor leciona muitas disciplinas --> * 
+ Enquanto uma disciplina só é lecionada por um professor --> 1 
+ 
+ - Exemplos de Multiplicidade:
+    - 1          | exatamente 1
+    - 0..1       |  0 ou 1
+    - *          | Muitos
+    - 1 .. *     | 1 ou mais 
+    
+- Agregação: Representa uma relação em que os objetos podem existir mesmo sem o todo
+
+                                          ╭────────────────────────╮
+     ○                                                                 ╱                                             ╲     Um departamento Possui Professores
+  ─┼─                                   │                            │    Mas professores podem existir independente do Departamento
+   │  ◇─────────────────────────────────│   Gerenciar professores    │  
+   ╱ ╲                                    │                            │
+                                          ╲                                             ╱
+ Departamento                              ╰────────────────────────╯
+ 
+ - Composição: Também representa uma relação todo-parte, porém mais forte que a agregação. Na composição 
+ a parte não pode existir sem o todo. 
+ 
+                                           ╭────────────────────╮
+     ○                                                                 ╱                                       ╲
+  ─┼─                                   │                        │   Um pedido possui itens 
+   │  ◆─────────────────────────────────│    Visualizar itens    │   Itens não podem existir sem Pedidos
+   ╱ ╲                                    │                        │
+                                         ╲                                        ╱
+  Pedido                                   ╰────────────────────╯
+  
+  
+- Agregação Vs Composição
+
+┌──────────────────────┬───────────────┬───────────────┐
+│ Característica       │ Agregação     │ Composição    │
+├──────────────────────┼───────────────┼───────────────┤
+│ Relação              │ todo-parte    │ todo-parte    │
+├──────────────────────┼───────────────┼───────────────┤
+│ Dependência          │ fraca         │ forte         │
+├──────────────────────┼───────────────┼───────────────┤
+│ Existência           │ sim           │ não           │
+│ independente         │               │               │
+├──────────────────────┼───────────────┼───────────────┤
+│ Símbolo              │ ◇ losango     │ ◆ losango     │
+│                      │   vazio       │   preenchido  │
+└──────────────────────┴───────────────┴───────────────┘
+
+- Herança(generalização): Tem relação entre uma classe mais geral e uma mais específica. A classe filha herda atributos da classe pai. 
+
+
+                     ○
+                    ─┼─
+                     │       Generalização
+                    ╱ ╲
+
+                   Pessoa
+                     △
+                     │
+         ┌────────────┴────────────┐
+         │                         │
+         │                         │
+         ○                                           ○    Especialização
+        ─┼─                       ─┼─
+         │                         │
+        ╱ ╲                                         ╱ ╲
+
+  Pessoa Física            Pessoa Jurídica
+  
+
+                  ╭──────────────────────╮
+                 ╱                                          ╲
+                │   Realizar pagamento     │  Generalização
+                 ╲                                          ╱
+                  ╰──────────┬───────────╯
+                             △
+                             │
+            ┌────────────────┴──────────┐
+            │                           │
+  ╭─────────┴──────────╮            ╭─────────┴──────────╮
+ ╱                                      ╲         ╱                                      ╲
+│   Pagar com Cartão    │    │   Pagar com Dinheiro  │  Especificação 
+ ╲                                      ╱         ╲                                      ╱
+  ╰────────────────────╯            ╰────────────────────╯
+  
+ 
+ - Dependência: <<include>> : O relacionamento com include indica que um caso de uso sempre inclui outro caso de uso como parte do seu comportamento. 
+    - Um caso de uso reutiliza obrigatoriamente outro caso de uso 
+    - O caso incluído é executado sempre que o caso principal ocorre
+    
+       ○
+   ─┼─                       ╭──────────────────────╮
+    │  ──────────────────────│   Realizar depósito  │
+     ╱ ╲                                         ╰───────────┬──────────╯
+                                         ┊
+ Cliente                                 ┊
+                                         ┊  <<include>>
+                                         ┊
+                                         ▽
+                             ╭───────────┴──────────╮
+                             │Registrar movimentação│
+                             ╰──────────────────────╯
+                             
+
+     ○
+  ─┼─                        ╭──────────────────────╮
+   │  ────────────────────── │  Realizar check-in   │
+   ╱ ╲                                           ╰───────────┬──────────╯
+                                         ┊
+ Passageiro                              ┊
+                                         ┊  <<include>>
+                                         ┊
+                                         ▽
+                             ╭───────────┴──────────╮
+                             │ Gerar cartão embarque│
+                             ╰──────────────────────╯
+                        
+- Dependência: <<Extend>> indica que um caso de uso pode estender o comportamento de outro em determinadas condições. 
+    - A execução ocorre apenas em situações específicas 
+    - Diferente do include, o extend não é obrigatório 
+    
+     ○
+  ─┼─                       ╭──────────────────────╮
+   │  ──────────────────────│    Realizar saque    │
+   ╱ ╲                                         ╰───────────△──────────╯
+                                         ┊
+ Cliente                                 ┊
+                                         ┊  <<extend>> 
+                                         ┊
+                             ╭───────────┴──────────╮
+                             │ Imprimir comprovante │
+                             ╰──────────────────────╯
+                             
+
+- Diferença entre Include e Extend
+
+┌───────────────────┬─────────────────────────────┬─────────────────────────────────┐
+│ Característica    │ <<include>>                 │ <<extend>>                      │
+├───────────────────┼─────────────────────────────┼─────────────────────────────────┤
+│ Execução          │ Sempre ocorre               │ Ocorre apenas em certas         │
+│                   │                             │ condições                       │
+├───────────────────┼─────────────────────────────┼─────────────────────────────────┤
+│ Tipo              │ Obrigatório                 │ Opcional                        │
+├───────────────────┼─────────────────────────────┼─────────────────────────────────┤
+│ Objetivo          │ Reutilização de             │ Extensão de comportamento       │
+│                   │ funcionalidade              │                                 │
+├───────────────────┼─────────────────────────────┼─────────────────────────────────┤
+│ Direção da seta   │ para o caso incluído        │ para o caso base                │
+└───────────────────┴─────────────────────────────┴─────────────────────────────────┘
