@@ -741,7 +741,7 @@ ou seja a representação de seu esqueleto e estruturas.
 ```  
 
                                         ╭──────────────────────╮             
-                                       ╱                        ╲
+  ○                                     ╱                        ╲
  ─┼─                                  │                           │
   │      ──────────────────────────── │     Agendar consulta      │
  ╱ ╲                                  │                           │
