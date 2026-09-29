@@ -332,7 +332,7 @@ Exemplo: Nível de Concordância: Discordo Totalmente, Discordo parcialmente, ne
 > 2 - Discordo \
 > 3 - Neutro \
 > 4 - Concordo \
-> 5 - Concordo totalmente \
+> 5 - Concordo totalmente 
 
 ### Quantitativas Discretas 
 
@@ -360,15 +360,15 @@ Exemplo: Peso de um objeto: Pode variar em qualquer valor dentro de um intervalo
 
 ```  
 
->                       [ Variável ]
->                            │
->            ┌───────────────┴───────────────┐
->                    ▼                                                     ▼
->      [ Qualitativa ]               [ Quantitativa ]
->             │                              │
->       ┌─────┴─────┐                  ┌─────┴─────┐
->           ▼                   ▼                               ▼                   ▼
->    [Nominal] [Ordinal]           [Discreta] [Contínua] 
+                      [ Variável ]
+                            │
+            ┌───────────────┴───────────────┐
+                     ▼                                                     ▼
+       [ Qualitativa ]               [ Quantitativa ]
+             │                              │
+       ┌─────┴─────┐                  ┌─────┴─────┐
+            ▼                   ▼                               ▼                   ▼
+    [Nominal] [Ordinal]           [Discreta] [Contínua] 
 
 ```
 
@@ -411,7 +411,8 @@ pensamento paralelo, onde todos devem em cada momento olhar sobre uma perspectiv
 
 - Todos usam juntos a mesma cor 
 - Falam somente se tem algo sobre aquilo naquele momento
-
+<pre>
+``` 
 * [Foco Analítico: Baseado em Dados e Análise]
   └── Chapéu Branco (Factos, Informações, Neutro)
   └── Chapéu Preto (Pontos Fracos, Ameaças, Negativo)
@@ -421,7 +422,8 @@ pensamento paralelo, onde todos devem em cada momento olhar sobre uma perspectiv
   └── Chapéu Vermelho (Emoções, Sentimentos, Inexplicável)
   └── Chapéu Verde (Criatividade, Inovação, Soluções)
   └── Chapéu Azul (Visão Global, Implementação, Controle)
-
+```
+<pre>
 Exemplo: Sistema de Agendamento de Consultas Médicas
 
 [BRANCO] - Dados: Números de Pacientes e consultas por dia 
@@ -623,7 +625,8 @@ Modelos representam:
 - Linguagem-padrão para elaboração da estrutura de projetos de software 
 
 - Permite que os analistas e desenvolvedores visualizam os projetos através de diagramas padronizados
-
+<pre>
+``` 
 Diagrama
 ├── Diagrama de Estruturas
 │   ├── Diagrama de Perfil
@@ -645,7 +648,8 @@ Diagrama
         └── Diagrama de Tempo
 
 Adaptado de UML Superstructure Specification 2.4.1, Figure A.5
-
+```
+<pre>
 ### Diagramas estruturais 
 
 Existem para visualizar, especificar, construir e documentar os aspectos estáticos de um sistema,
@@ -684,7 +688,7 @@ ou seja a representação de seu esqueleto e estruturas.
 - Atores: Especifica o papel executado por usuário, um dispositivo, outro sistema, que interage com o assunto(sistema)
 - Atores: Devem ser EXTERNOS ao sistema
 - Atores são representados por bonecos de palito(stick man) 
-
+<pre>
 ```  
      ○
   /│\
@@ -693,7 +697,7 @@ ou seja a representação de seu esqueleto e estruturas.
 
  
 ```
-
+<pre>
 - Atores podem ser de Negócios ou de sistema, representados sempre pelo boneco
 - Ator de Negócio: Colaboradores da empresa
 - Ator de sistemas: Usuários do sistema que será desenvolvido
@@ -701,7 +705,7 @@ ou seja a representação de seu esqueleto e estruturas.
 - Casos de uso: Especificação de um conjunto de ações executadas por um sistema, que contem um resultado observável 
 - Casos de uso: Representados por uma elipse, como o nome do caso de uso dentro: 
 
-
+<pre>
 ```  
   ╭──────────────────╮
  ╱                                   ╲     O nome do caso de uso de ser um VERBO + SUBSTANTIVO
@@ -710,7 +714,7 @@ ou seja a representação de seu esqueleto e estruturas.
   ╰──────────────────╯
 
 ```
-
+<pre>
 - Caso de uso de negócios: Servir Jantar em um restaurante
 
 - Caso de uso de Sistema: Efetuar login no sistema
@@ -732,7 +736,7 @@ ou seja a representação de seu esqueleto e estruturas.
 - Associação: Representada por uma seta podendo ser direcionada ou não. Exemplo:  Cliente ───────────────────▶ ( Realizar Compra )
 - Exemplo de associação entre ator e caso de uso:
 
-
+<pre>
 ```  
 
                                                                         ╭──────────────────────╮             
@@ -745,9 +749,10 @@ Paciente                                 ╰────────────
 
 
 ```
-
+<pre>
 - Exemplo de associação com Multiplicidade: A multiplicidade indica quantos objetos podem participar da relação: 
 
+<pre>
 
 ```  
                                                                            ╭────────────────────────╮
@@ -769,9 +774,9 @@ Paciente                                 ╰────────────
     
 
 ```
-    
+<pre>  
 - Agregação: Representa uma relação em que os objetos podem existir mesmo sem o todo
-
+<pre>
 
 ```  
 
@@ -796,9 +801,11 @@ Paciente                                 ╰────────────
   
  
 ```
+<pre>
 
 - Agregação Vs Composição
 
+<pre>
 
 ```  
 ┌──────────────────────┬───────────────┬───────────────┐
@@ -817,10 +824,10 @@ Paciente                                 ╰────────────
 
 
 ```
-
+<pre>
 - Herança(generalização): Tem relação entre uma classe mais geral e uma mais específica. A classe filha herda atributos da classe pai. 
 
-
+<pre>
 ```  
 
                                       ○
@@ -859,12 +866,13 @@ Paciente                                 ╰────────────
   
 
 ```
+<pre>
 
  - Dependência: <<include>> : O relacionamento com include indica que um caso de uso sempre inclui outro caso de uso como parte do seu comportamento. 
     - Um caso de uso reutiliza obrigatoriamente outro caso de uso 
     - O caso incluído é executado sempre que o caso principal ocorre
  
- 
+ <pre>
  
 ```  
 
@@ -913,10 +921,11 @@ Paciente                                 ╰────────────
                              
 
 ```
+<pre>
 
 - Diferença entre Include e Extend
 
-
+<pre>
 ```  
 ┌───────────────────┬─────────────────────────────┬─────────────────────────────────┐
 │ Característica    │ <<include>>                 │ <<extend>>                      │
@@ -934,4 +943,4 @@ Paciente                                 ╰────────────
 
 ```  
 
-
+<pre>
