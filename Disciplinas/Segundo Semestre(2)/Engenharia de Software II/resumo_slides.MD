@@ -358,6 +358,7 @@ Exemplo: Altura de uma pessoa, pode variar entre um valor de 150 cm a 180 cm.
 Exemplo: Tempo de reação: Podem variar em uma escala contínua entre 0,2 a 1,5. 
 Exemplo: Peso de um objeto: Pode variar em qualquer valor dentro de um intervalo contínuo, como de 2kg a 5kg. 
 
+<pre>
 ```  
 
                       [ Variável ]
@@ -371,7 +372,7 @@ Exemplo: Peso de um objeto: Pode variar em qualquer valor dentro de um intervalo
     [Nominal] [Ordinal]           [Discreta] [Contínua] 
 
 ```
-
+</pre>
 
 # Passo 2 - Técnicas de Criatividade
 
@@ -423,7 +424,7 @@ pensamento paralelo, onde todos devem em cada momento olhar sobre uma perspectiv
   └── Chapéu Verde (Criatividade, Inovação, Soluções)
   └── Chapéu Azul (Visão Global, Implementação, Controle)
 ```
-<pre>
+</pre>
 Exemplo: Sistema de Agendamento de Consultas Médicas
 
 [BRANCO] - Dados: Números de Pacientes e consultas por dia 
@@ -649,7 +650,7 @@ Diagrama
 
 Adaptado de UML Superstructure Specification 2.4.1, Figure A.5
 ```
-<pre>
+</pre>
 ### Diagramas estruturais 
 
 Existem para visualizar, especificar, construir e documentar os aspectos estáticos de um sistema,
@@ -697,7 +698,7 @@ ou seja a representação de seu esqueleto e estruturas.
 
  
 ```
-<pre>
+</pre>
 - Atores podem ser de Negócios ou de sistema, representados sempre pelo boneco
 - Ator de Negócio: Colaboradores da empresa
 - Ator de sistemas: Usuários do sistema que será desenvolvido
@@ -714,7 +715,7 @@ ou seja a representação de seu esqueleto e estruturas.
   ╰──────────────────╯
 
 ```
-<pre>
+</pre>
 - Caso de uso de negócios: Servir Jantar em um restaurante
 
 - Caso de uso de Sistema: Efetuar login no sistema
@@ -749,7 +750,7 @@ Paciente                                 ╰────────────
 
 
 ```
-<pre>
+</pre>
 - Exemplo de associação com Multiplicidade: A multiplicidade indica quantos objetos podem participar da relação: 
 
 <pre>
@@ -774,7 +775,7 @@ Paciente                                 ╰────────────
     
 
 ```
-<pre>  
+</pre>  
 - Agregação: Representa uma relação em que os objetos podem existir mesmo sem o todo
 <pre>
 
@@ -801,7 +802,7 @@ Paciente                                 ╰────────────
   
  
 ```
-<pre>
+</pre>
 
 - Agregação Vs Composição
 
@@ -824,7 +825,7 @@ Paciente                                 ╰────────────
 
 
 ```
-<pre>
+</pre>
 - Herança(generalização): Tem relação entre uma classe mais geral e uma mais específica. A classe filha herda atributos da classe pai. 
 
 <pre>
@@ -866,7 +867,7 @@ Paciente                                 ╰────────────
   
 
 ```
-<pre>
+</pre>
 
  - Dependência: <<include>> : O relacionamento com include indica que um caso de uso sempre inclui outro caso de uso como parte do seu comportamento. 
     - Um caso de uso reutiliza obrigatoriamente outro caso de uso 
@@ -921,7 +922,7 @@ Paciente                                 ╰────────────
                              
 
 ```
-<pre>
+</pre>
 
 - Diferença entre Include e Extend
 
@@ -943,4 +944,4 @@ Paciente                                 ╰────────────
 
 ```  
 
-<pre>
+</pre>
