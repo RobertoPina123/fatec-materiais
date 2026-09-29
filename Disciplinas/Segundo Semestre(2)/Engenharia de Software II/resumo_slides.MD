@@ -31,19 +31,19 @@ envolvidas na criação do software.
 Responsáveis por coordenar e supervisionar todas as atividades do projeto. Incluindo a comunicação com os Stakeholders, o cumprimento dos prazos, 
 e o gerenciamento de recursos. 
 
-## Analistas de Negócios:
+### Analistas de Negócios:
 
 Responsáveis por compreender e articular as necessidades dos clientes e usuários, traduzindo em requisitos claros e compreensíveis para a equipe de desenvolvimento. 
 
-## Equipe de Testes: 
+### Equipe de Testes: 
 
 Testar o software para saber se ele atende os requisitos estabelecidos, identificando problemas e garantindo a qualidade do produto final. 
 
-## Equipe de Suporte: 
+### Equipe de Suporte: 
 
 Responsável por lidar com problemas, fornecer suporte técnico e garantir que o software funcione conforme esperado. 
 
-## Reguladores e Orgãos Governamentais: 
+### Reguladores e Órgãos Governamentais: 
 
 Regulam através das leis, o que os softwares podem fazer ou não. 
 
@@ -326,13 +326,13 @@ Exemplo: Ensino Fundamental Completo, ensino médio incompleto, Ensino médio co
 Exemplo: Classe Social: Baixa, media, alta. 
 Exemplo: Nível de Concordância: Discordo Totalmente, Discordo parcialmente, neutro, concordo parcialmente, concordo totalmente ( Escala de Likert). 
 
-> Exemplo da Escala de Likert: 
-> " Estou satisfeito com meu trabalho"
-> 1 - Discordo totalmente 
-> 2 - Discordo 
-> 3 - Neutro 
-> 4 - Concordo 
-> 5 - Concordo totalmente
+> Exemplo da Escala de Likert: \
+> " Estou satisfeito com meu trabalho"\
+> 1 - Discordo totalmente \
+> 2 - Discordo \
+> 3 - Neutro \
+> 4 - Concordo \
+> 5 - Concordo totalmente \
 
 ### Quantitativas Discretas 
 
@@ -358,15 +358,20 @@ Exemplo: Altura de uma pessoa, pode variar entre um valor de 150 cm a 180 cm.
 Exemplo: Tempo de reação: Podem variar em uma escala contínua entre 0,2 a 1,5. 
 Exemplo: Peso de um objeto: Pode variar em qualquer valor dentro de um intervalo contínuo, como de 2kg a 5kg. 
 
->                 [ Variável ]
->                      │
->      ┌───────────────┴───────────────┐
->           ▼                                                     ▼
->  [ Qualitativa ]               [ Quantitativa ]
->        │                              │
->  ┌─────┴─────┐                  ┌─────┴─────┐
->   ▼                   ▼                               ▼                   ▼
-> [Nominal] [Ordinal]           [Discreta] [Contínua]
+```  
+
+>                       [ Variável ]
+>                            │
+>            ┌───────────────┴───────────────┐
+>                    ▼                                                     ▼
+>      [ Qualitativa ]               [ Quantitativa ]
+>             │                              │
+>       ┌─────┴─────┐                  ┌─────┴─────┐
+>           ▼                   ▼                               ▼                   ▼
+>    [Nominal] [Ordinal]           [Discreta] [Contínua] 
+
+```
+
 
 # Passo 2 - Técnicas de Criatividade
 
@@ -680,12 +685,15 @@ ou seja a representação de seu esqueleto e estruturas.
 - Atores: Devem ser EXTERNOS ao sistema
 - Atores são representados por bonecos de palito(stick man) 
 
+```  
      ○
   /│\
    │
   / \
 
  
+```
+
 - Atores podem ser de Negócios ou de sistema, representados sempre pelo boneco
 - Ator de Negócio: Colaboradores da empresa
 - Ator de sistemas: Usuários do sistema que será desenvolvido
@@ -693,12 +701,16 @@ ou seja a representação de seu esqueleto e estruturas.
 - Casos de uso: Especificação de um conjunto de ações executadas por um sistema, que contem um resultado observável 
 - Casos de uso: Representados por uma elipse, como o nome do caso de uso dentro: 
 
+
+```  
   ╭──────────────────╮
  ╱                                   ╲     O nome do caso de uso de ser um VERBO + SUBSTANTIVO
 │   Realizar Compra   │    (Indicando a ação ) 
  ╲                                   ╱     Exemplo: Efetuar Login, Cadastrar Cliente  
   ╰──────────────────╯
-    
+
+```
+
 - Caso de uso de negócios: Servir Jantar em um restaurante
 
 - Caso de uso de Sistema: Efetuar login no sistema
@@ -720,23 +732,30 @@ ou seja a representação de seu esqueleto e estruturas.
 - Associação: Representada por uma seta podendo ser direcionada ou não. Exemplo:  Cliente ───────────────────▶ ( Realizar Compra )
 - Exemplo de associação entre ator e caso de uso:
 
-                                         ╭──────────────────────╮             
+
+```  
+
+                                                                        ╭──────────────────────╮             
    ○                                                               ╱                                            ╲
  ─┼─                                  │                           │
   │      ──────────────────────────── │     Agendar consulta      │
   ╱ ╲                                   │                          │
-                                        ╲                                          ╱
+                                                                       ╲                                          ╱
 Paciente                                 ╰──────────────────────╯
 
 
+```
+
 - Exemplo de associação com Multiplicidade: A multiplicidade indica quantos objetos podem participar da relação: 
 
-                                          ╭────────────────────────╮
+
+```  
+                                                                           ╭────────────────────────╮
      ○                                                                ╱                                               ╲
   ─┼─                                   │                             │
    │   ─────────────────────────────────│    Lecionar disciplinas     │
     ╱ ╲                                    │                            │
-                                          ╲                                             ╱
+                                                                           ╲                                             ╱
  Professor    1                 *          ╰────────────────────────╯
  
  Um professor leciona muitas disciplinas --> * 
@@ -748,14 +767,20 @@ Paciente                                 ╰────────────
     - *          | Muitos
     - 1 .. *     | 1 ou mais 
     
+
+```
+    
 - Agregação: Representa uma relação em que os objetos podem existir mesmo sem o todo
 
-                                          ╭────────────────────────╮
-     ○                                                                 ╱                                             ╲     Um departamento Possui Professores
-  ─┼─                                   │                            │    Mas professores podem existir independente do Departamento
+
+```  
+
+                                                                           ╭────────────────────────╮
+     ○                                                                  ╱                                             ╲     Um departamento Possui Professores
+  ─┼─                                    │                            │    Mas professores podem existir independente do Departamento
    │  ◇─────────────────────────────────│   Gerenciar professores    │  
    ╱ ╲                                    │                            │
-                                          ╲                                             ╱
+                                                                          ╲                                             ╱
  Departamento                              ╰────────────────────────╯
  
  - Composição: Também representa uma relação todo-parte, porém mais forte que a agregação. Na composição 
@@ -769,9 +794,13 @@ Paciente                                 ╰────────────
                                          ╲                                        ╱
   Pedido                                   ╰────────────────────╯
   
-  
+ 
+```
+
 - Agregação Vs Composição
 
+
+```  
 ┌──────────────────────┬───────────────┬───────────────┐
 │ Característica       │ Agregação     │ Composição    │
 ├──────────────────────┼───────────────┼───────────────┤
@@ -786,34 +815,39 @@ Paciente                                 ╰────────────
 │                      │   vazio       │   preenchido  │
 └──────────────────────┴───────────────┴───────────────┘
 
+
+```
+
 - Herança(generalização): Tem relação entre uma classe mais geral e uma mais específica. A classe filha herda atributos da classe pai. 
 
 
-                     ○
-                    ─┼─
-                     │       Generalização
-                    ╱ ╲
+```  
 
-                   Pessoa
-                     △
-                     │
+                                      ○
+                     ─┼─
+                      │       Generalização
+                                     ╱ ╲
+
+                    Pessoa
+                                               △
+                      │
          ┌────────────┴────────────┐
          │                         │
          │                         │
-         ○                                           ○    Especialização
+               ○                                           ○    Especialização
         ─┼─                       ─┼─
          │                         │
-        ╱ ╲                                         ╱ ╲
+              ╱ ╲                                         ╱ ╲
 
-  Pessoa Física            Pessoa Jurídica
+     Pessoa Física            Pessoa Jurídica
   
 
-                  ╭──────────────────────╮
-                 ╱                                          ╲
-                │   Realizar pagamento     │  Generalização
-                 ╲                                          ╱
-                  ╰──────────┬───────────╯
-                             △
+                    ╭──────────────────────╮
+                   ╱                                          ╲
+          │   Realizar pagamento     │  Generalização
+                   ╲                                          ╱
+                     ╰──────────┬───────────╯
+                                                              △
                              │
             ┌────────────────┴──────────┐
             │                           │
@@ -823,37 +857,43 @@ Paciente                                 ╰────────────
  ╲                                      ╱         ╲                                      ╱
   ╰────────────────────╯            ╰────────────────────╯
   
- 
+
+```
+
  - Dependência: <<include>> : O relacionamento com include indica que um caso de uso sempre inclui outro caso de uso como parte do seu comportamento. 
     - Um caso de uso reutiliza obrigatoriamente outro caso de uso 
     - O caso incluído é executado sempre que o caso principal ocorre
-    
+ 
+ 
+ 
+```  
+
        ○
-   ─┼─                       ╭──────────────────────╮
-    │  ──────────────────────│   Realizar depósito  │
-     ╱ ╲                                         ╰───────────┬──────────╯
-                                         ┊
- Cliente                                 ┊
-                                         ┊  <<include>>
-                                         ┊
-                                         ▽
-                             ╭───────────┴──────────╮
-                             │Registrar movimentação│
-                             ╰──────────────────────╯
+   ─┼─                   ╭──────────────────────╮
+    │  ──────────────────│ Realizar depósito    │
+     ╱ ╲                                  ╰───────────┬──────────╯
+                                                                 ┊
+ Cliente                             ┊
+                                                                 ┊  <<include>>
+                                                                 ┊
+                                                                               ▽
+                                           ╭───────────┴──────────╮
+                         │Registrar movimentação│
+                                            ╰──────────────────────╯
                              
 
      ○
   ─┼─                        ╭──────────────────────╮
    │  ────────────────────── │  Realizar check-in   │
    ╱ ╲                                           ╰───────────┬──────────╯
-                                         ┊
+                                                                        ┊
  Passageiro                              ┊
-                                         ┊  <<include>>
-                                         ┊
-                                         ▽
-                             ╭───────────┴──────────╮
+                                                                        ┊  <<include>>
+                                                                        ┊
+                                                                                       ▽
+                                                   ╭───────────┴──────────╮
                              │ Gerar cartão embarque│
-                             ╰──────────────────────╯
+                                                   ╰──────────────────────╯
                         
 - Dependência: <<Extend>> indica que um caso de uso pode estender o comportamento de outro em determinadas condições. 
     - A execução ocorre apenas em situações específicas 
@@ -863,17 +903,21 @@ Paciente                                 ╰────────────
   ─┼─                       ╭──────────────────────╮
    │  ──────────────────────│    Realizar saque    │
    ╱ ╲                                         ╰───────────△──────────╯
-                                         ┊
- Cliente                                 ┊
-                                         ┊  <<extend>> 
-                                         ┊
-                             ╭───────────┴──────────╮
+                                                                       ┊
+ Cliente                                ┊
+                                                                       ┊  <<extend>> 
+                                                                       ┊
+                                                  ╭───────────┴──────────╮
                              │ Imprimir comprovante │
-                             ╰──────────────────────╯
+                                                   ╰──────────────────────╯
                              
+
+```
 
 - Diferença entre Include e Extend
 
+
+```  
 ┌───────────────────┬─────────────────────────────┬─────────────────────────────────┐
 │ Característica    │ <<include>>                 │ <<extend>>                      │
 ├───────────────────┼─────────────────────────────┼─────────────────────────────────┤
@@ -887,3 +931,7 @@ Paciente                                 ╰────────────
 ├───────────────────┼─────────────────────────────┼─────────────────────────────────┤
 │ Direção da seta   │ para o caso incluído        │ para o caso base                │
 └───────────────────┴─────────────────────────────┴─────────────────────────────────┘
+
+```  
+
+
