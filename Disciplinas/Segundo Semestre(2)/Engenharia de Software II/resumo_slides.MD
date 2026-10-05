@@ -691,7 +691,7 @@ ou seja a representação de seu esqueleto e estruturas.
 - Atores são representados por bonecos de palito(stick man) 
 <pre>
 ```  
-     ○
+   ○
   /│\
    │
   / \
@@ -709,9 +709,9 @@ ou seja a representação de seu esqueleto e estruturas.
 <pre>
 ```  
   ╭──────────────────╮
- ╱                                   ╲     O nome do caso de uso de ser um VERBO + SUBSTANTIVO
-│   Realizar Compra   │    (Indicando a ação ) 
- ╲                                   ╱     Exemplo: Efetuar Login, Cadastrar Cliente  
+ ╱                    ╲     O nome do caso de uso de ser um VERBO + SUBSTANTIVO
+│   Realizar Compra    │    (Indicando a ação ) 
+ ╲                    ╱     Exemplo: Efetuar Login, Cadastrar Cliente  
   ╰──────────────────╯
 
 ```
@@ -740,12 +740,12 @@ ou seja a representação de seu esqueleto e estruturas.
 <pre>
 ```  
 
-                                                                        ╭──────────────────────╮             
-   ○                                                               ╱                                            ╲
+                                        ╭──────────────────────╮             
+  ○                                     ╱                        ╲
  ─┼─                                  │                           │
   │      ──────────────────────────── │     Agendar consulta      │
-  ╱ ╲                                   │                          │
-                                                                       ╲                                          ╱
+ ╱ ╲                                  │                           │
+                                       ╲                         ╱
 Paciente                                 ╰──────────────────────╯
 
 
@@ -756,12 +756,12 @@ Paciente                                 ╰────────────
 <pre>
 
 ```  
-                                                                           ╭────────────────────────╮
-     ○                                                                ╱                                               ╲
+                                           ╭────────────────────────╮
+   ○                                     ╱                            ╲
   ─┼─                                   │                             │
-   │   ─────────────────────────────────│    Lecionar disciplinas     │
-    ╱ ╲                                    │                            │
-                                                                           ╲                                             ╱
+   │   ─────────────────────────────────│    Lecionar disciplina      │
+  ╱ ╲                                    │                            │
+                                         ╲                           ╱
  Professor    1                 *          ╰────────────────────────╯
  
  Um professor leciona muitas disciplinas --> * 
@@ -781,23 +781,23 @@ Paciente                                 ╰────────────
 
 ```  
 
-                                                                           ╭────────────────────────╮
-     ○                                                                  ╱                                             ╲     Um departamento Possui Professores
-  ─┼─                                    │                            │    Mas professores podem existir independente do Departamento
+                                          ╭────────────────────────╮
+   ○                                     ╱                          ╲     Um departamento Possui Professores
+  ─┼─                                   │                            │    Mas professores podem existir independente do Departamento
    │  ◇─────────────────────────────────│   Gerenciar professores    │  
-   ╱ ╲                                    │                            │
-                                                                          ╲                                             ╱
+  ╱ ╲                                   │                            │
+                                         ╲                           ╱
  Departamento                              ╰────────────────────────╯
  
  - Composição: Também representa uma relação todo-parte, porém mais forte que a agregação. Na composição 
  a parte não pode existir sem o todo. 
  
                                            ╭────────────────────╮
-     ○                                                                 ╱                                       ╲
-  ─┼─                                   │                        │   Um pedido possui itens 
-   │  ◆─────────────────────────────────│    Visualizar itens    │   Itens não podem existir sem Pedidos
-   ╱ ╲                                    │                        │
-                                         ╲                                        ╱
+   ○                                     ╱                       ╲
+  ─┼─                                   │                         │   Um pedido possui itens 
+   │  ◆─────────────────────────────────│    Visualizar itens     │   Itens não podem existir sem Pedidos
+  ╱ ╲                                   │                         │
+                                         ╲                       ╱
   Pedido                                   ╰────────────────────╯
   
  
@@ -831,38 +831,38 @@ Paciente                                 ╰────────────
 <pre>
 ```  
 
-                                      ○
+                      ○
                      ─┼─
                       │       Generalização
-                                     ╱ ╲
+                     ╱ ╲
 
                     Pessoa
-                                               △
+                      △
                       │
          ┌────────────┴────────────┐
          │                         │
          │                         │
-               ○                                           ○    Especialização
+         ○                         ○    Especialização
         ─┼─                       ─┼─
          │                         │
-              ╱ ╲                                         ╱ ╲
+        ╱ ╲                       ╱ ╲
 
      Pessoa Física            Pessoa Jurídica
   
 
-                    ╭──────────────────────╮
-                   ╱                                          ╲
-          │   Realizar pagamento     │  Generalização
-                   ╲                                          ╱
-                     ╰──────────┬───────────╯
-                                                              △
+                  ╭──────────────────────╮
+                 ╱                        ╲
+                │  Realizar pagamento      │  Generalização
+                 ╲                        ╱
+                  ╰──────────┬───────────╯
+                             △
                              │
-            ┌────────────────┴──────────┐
-            │                           │
+            ┌────────────────┴────────────────┐
+            │                                 │
   ╭─────────┴──────────╮            ╭─────────┴──────────╮
- ╱                                      ╲         ╱                                      ╲
-│   Pagar com Cartão    │    │   Pagar com Dinheiro  │  Especificação 
- ╲                                      ╱         ╲                                      ╱
+ ╱                      ╲         ╱                       ╲
+│   Pagar com Cartão     │       │   Pagar com Dinheiro    │  Especificação 
+ ╲                      ╱         ╲                       ╱
   ╰────────────────────╯            ╰────────────────────╯
   
 
@@ -875,34 +875,34 @@ Paciente                                 ╰────────────
  
  <pre>
  
-```  
+```
 
-       ○
+    ○
    ─┼─                   ╭──────────────────────╮
     │  ──────────────────│ Realizar depósito    │
-     ╱ ╲                                  ╰───────────┬──────────╯
-                                                                 ┊
+   ╱ ╲                   ╰───────────┬──────────╯
+                                     ┊
  Cliente                             ┊
-                                                                 ┊  <<include>>
-                                                                 ┊
-                                                                               ▽
-                                           ╭───────────┴──────────╮
+                                     ┊  <<include>>
+                                     ┊
+                                     ▽
+                         ╭───────────┴──────────╮
                          │Registrar movimentação│
-                                            ╰──────────────────────╯
+                         ╰──────────────────────╯
                              
 
-     ○
+   ○
   ─┼─                        ╭──────────────────────╮
    │  ────────────────────── │  Realizar check-in   │
-   ╱ ╲                                           ╰───────────┬──────────╯
-                                                                        ┊
+  ╱ ╲                        ╰───────────┬──────────╯
+                                         ┊
  Passageiro                              ┊
-                                                                        ┊  <<include>>
-                                                                        ┊
-                                                                                       ▽
-                                                   ╭───────────┴──────────╮
+                                         ┊  <<include>>
+                                         ┊
+                                         ▽
+                             ╭───────────┴──────────╮
                              │ Gerar cartão embarque│
-                                                   ╰──────────────────────╯
+                             ╰──────────────────────╯
                         
 - Dependência: <<Extend>> indica que um caso de uso pode estender o comportamento de outro em determinadas condições. 
     - A execução ocorre apenas em situações específicas 
@@ -911,14 +911,14 @@ Paciente                                 ╰────────────
      ○
   ─┼─                       ╭──────────────────────╮
    │  ──────────────────────│    Realizar saque    │
-   ╱ ╲                                         ╰───────────△──────────╯
-                                                                       ┊
+   ╱ ╲                       ───────────△──────────╯
+                                        ┊
  Cliente                                ┊
-                                                                       ┊  <<extend>> 
-                                                                       ┊
-                                                  ╭───────────┴──────────╮
-                             │ Imprimir comprovante │
-                                                   ╰──────────────────────╯
+                                        ┊  <<extend>> 
+                                        ┊
+                            ╭───────────┴──────────╮
+                            │ Imprimir comprovante │
+                            ╰──────────────────────╯
                              
 
 ```
